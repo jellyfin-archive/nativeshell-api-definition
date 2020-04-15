@@ -8,17 +8,30 @@ cache: &global_cache
 before_script:
   - yarn install
 
-lint:
-  stage: test
+docs:
+  only:
+    - master
+  stage: build
   cache:
     <<: *global_cache
     policy: pull-push
+  script:
+    - yarn docs
+  artifacts:
+    paths:
+      - public
+
+lint:
+  stage: test
+  needs: []
   script:
     - yarn lint --color
 
 publish-next:
   only:
     - master
+  needs:
+    - lint
   stage: deploy
   script:
     - echo "//gitlab.com/api/v4/projects/18148878/packages/npm/:_authToken=${CI_JOB_TOKEN}" > .npmrc
@@ -28,15 +41,9 @@ publish-latest:
   only:
     refs:
       - tags
+  needs:
+    - lint
+  stage: deploy
   script:
     - echo "//gitlab.com/api/v4/projects/18148878/packages/npm/:_authToken=${CI_JOB_TOKEN}" > .npmrc
     - yarn publish --no-git-tag-version
-
-pages:
-  only:
-    - master
-  script:
-    - yarn docs
-  artifacts:
-    paths:
-      - public
