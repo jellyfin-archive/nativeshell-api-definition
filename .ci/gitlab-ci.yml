@@ -10,6 +10,7 @@ before_script:
   - yarn install
 
 build:
+  stage: build
   cache:
     <<: *global_cache
     policy: pull-push
