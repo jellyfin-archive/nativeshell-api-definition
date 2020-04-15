@@ -9,13 +9,22 @@ cache: &global_cache
 before_script:
   - yarn install
 
+build:
+  cache:
+    <<: *global_cache
+    policy: pull-push
+  script:
+    - yarn build
+  artifacts:
+    name: dist
+    paths:
+      - dist
+
+
 pages:
   only:
     - master
   stage: build
-  cache:
-    <<: *global_cache
-    policy: pull-push
   script:
     - yarn docs
   artifacts:
@@ -25,6 +34,7 @@ pages:
 lint:
   stage: test
   needs: []
+  dependencies: []
   script:
     - yarn lint --color
 
@@ -32,7 +42,10 @@ publish-nightly:
   only:
     - master
   needs:
+    - build
     - lint
+  dependencies:
+    - build
   stage: deploy
   before_script:
     - apk add jq moreutils
@@ -47,7 +60,10 @@ publish-latest:
     refs:
       - tags
   needs:
+    - build
     - lint
+  dependencies:
+    - build
   stage: deploy
   before_script:
     - apk add jq

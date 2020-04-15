@@ -1,6 +1,5 @@
 {
   "inputFiles": ["./src"],
-  "includeDeclarations": true,
   "mode": "file",
   "out": "public",
   "name": "Jellyfin NativeShell API definition",
