@@ -8,7 +8,7 @@ cache: &global_cache
 before_script:
   - yarn install
 
-docs:
+pages:
   only:
     - master
   stage: build
