@@ -1,6 +1,8 @@
 /**
  * The entry point for the WebClient that links the native app into the web client
  */
+import { IAppHost } from "./AppHost";
+
 export interface INativeShell {
     /**
      * Return an array of require.js module names of plugins.
@@ -47,6 +49,11 @@ export interface INativeShell {
      * Hide media information/controls when media playback is complete.
      */
     hideMediaSession(): void;
+
+    /**
+     * App host instance
+     */
+    AppHost: IAppHost;
 }
 
 /**

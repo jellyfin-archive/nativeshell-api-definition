@@ -4,5 +4,6 @@
   "out": "public",
   "name": "Jellyfin NativeShell API definition",
   "readme": "README.md",
-  "excludeExternals": true
+  "excludeExternals": true,
+  "sourcefile-url-prefix": "https://github.com/cromefire/nativeshell-api-definition/blob/master/src/"
 }

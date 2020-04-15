@@ -1,10 +1,5 @@
-.idea
-.vs
-.vscode
+.*
 *.log
-.eslintrc.js
-.gitignore
 yarn.lock
-.ci
 public
 typedoc.json
