@@ -25,9 +25,9 @@ export interface INativeShell {
     /**
      * Download a file to the local filesystem.
      *
-     * @param url The URL where the file should be downloaded from
+     * @param downloadInfo Information to start a user facing download
      */
-    downloadFile(url: string): void;
+    downloadFile(downloadInfo: IDownloadInfo): void;
 
     /**
      * Automatically discovers servers
@@ -47,6 +47,26 @@ export interface INativeShell {
      * Hide media information/controls when media playback is complete.
      */
     hideMediaSession(): void;
+}
+
+/**
+ * Information to start a download to the local file system
+ *
+ * See also: {@link INativeShell.downloadFile}
+ */
+export interface IDownloadInfo {
+    /**
+     * The url to download the file from
+     */
+    url: string;
+    /**
+     * The title of the file to display to the user (e.g. a Movie title; might no be supported/used on any platform)
+     */
+    title: string;
+    /**
+     * The (preferred) filename to save the file as (might no be supported/used on any platform)
+     */
+    filename: string;
 }
 
 /**
