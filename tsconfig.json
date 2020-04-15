@@ -5,7 +5,8 @@
     "moduleResolution": "Node",
     "module": "esnext",
     "target": "es2020",
-    "sourceMap": true
+    "sourceMap": true,
+    "strict": true
   },
   "exclude": [
     "node_modules"
