@@ -6,3 +6,4 @@
 .gitignore
 yarn.lock
 .ci
+public
