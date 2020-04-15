@@ -35,7 +35,7 @@ publish-next:
   stage: deploy
   script:
     - echo "//gitlab.com/api/v4/projects/18148878/packages/npm/:_authToken=${CI_JOB_TOKEN}" > .npmrc
-    - yarn publish --no-git-tag-version --tag next
+    - npm publish --no-git-tag-version --tag next
 
 publish-latest:
   only:
