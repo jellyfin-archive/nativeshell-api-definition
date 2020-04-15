@@ -1,6 +1,7 @@
 image: node:12-alpine
 
 cache: &global_cache
+  key: "${CI_COMMIT_REF_SLUG}"
   policy: pull
   paths:
     - node_modules
