@@ -12,5 +12,7 @@ module.exports = {
   rules: {
     "prettier/prettier": "error",
     quotes: ["error", "double"],
+    "@typescript-eslint/interface-name-prefix": ["error", "always"],
+    "@typescript-eslint/no-empty-interface": "off"
   },
 };

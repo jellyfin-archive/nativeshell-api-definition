@@ -1,4 +1,8 @@
 {
+  "inputFiles": ["./src"],
+  "includeDeclarations": true,
   "mode": "modules",
-  "out": "public"
+  "out": "public",
+  "name": "Jellyfin NativeShell API definition",
+  "readme": "README.md"
 }
