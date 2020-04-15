@@ -34,7 +34,7 @@ publish-nightly:
     - lint
   stage: deploy
   before_script:
-    - apk add git jq
+    - apk add jq moreutils
   script:
     - version="$(jq '.version' package.json -r)"
     - jq '.version = "${version}.nightly-${CI_PIPELINE_IID}"' package.json | sponge package.json
@@ -50,6 +50,8 @@ publish-latest:
   needs:
     - lint
   stage: deploy
+  before_script:
+    - apk add jq
   script:
     - echo "//gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" > .npmrc
     - npm publish --no-git-tag-version
