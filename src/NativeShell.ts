@@ -2,6 +2,7 @@
  * The entry point for the WebClient that links the native app into the web client
  */
 import { IAppHost } from "./AppHost";
+import { IFileSystem } from "./FileSystem";
 
 export interface INativeShell {
     /**
@@ -54,6 +55,11 @@ export interface INativeShell {
      * App host instance
      */
     AppHost: IAppHost;
+
+    /**
+     * Filesystem instance
+     */
+    FileSystem?: IFileSystem;
 }
 
 /**
