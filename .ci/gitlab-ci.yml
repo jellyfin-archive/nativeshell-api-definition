@@ -1,0 +1,33 @@
+image: node:12-alpine
+
+cache: &global_cache
+  policy: pull
+  paths:
+    - node_modules
+
+before_script:
+  - yarn install
+
+lint:
+  stage: test
+  cache:
+    <<: *global_cache
+    policy: pull-push
+  script:
+    - yarn lint --color
+
+publish-next:
+  only:
+    - master
+  stage: deploy
+  script:
+    - echo "//gitlab.com/api/v4/projects/<your_project_id>/packages/npm/:_authToken=${CI_JOB_TOKEN}" > .npmrc
+    - yarn publish --no-git-tag-version --tag next
+
+publish-latest:
+  only:
+    refs:
+      - tags
+  script:
+    - echo "//gitlab.com/api/v4/projects/<your_project_id>/packages/npm/:_authToken=${CI_JOB_TOKEN}" > .npmrc
+    - yarn publish --no-git-tag-version
