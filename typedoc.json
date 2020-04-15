@@ -4,5 +4,6 @@
   "mode": "modules",
   "out": "public",
   "name": "Jellyfin NativeShell API definition",
-  "readme": "README.md"
+  "readme": "README.md",
+  "excludeExternals": true
 }
