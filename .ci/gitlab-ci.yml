@@ -27,13 +27,18 @@ lint:
   script:
     - yarn lint --color
 
-publish-next:
+publish-nightly:
   only:
     - master
   needs:
     - lint
   stage: deploy
+  before_script:
+    - apk add git jq
   script:
+    - version="$(jq '.version' package.json -r)"
+    - rolling_number="$(git rev-list master --count)"
+    - jq '.version = "${version}.nightly-${rolling_number}"' package.json | sponge package.json
     - echo "//gitlab.com/api/v4/projects/18148878/packages/npm/:_authToken=${CI_JOB_TOKEN}" > .npmrc
     - npm publish --no-git-tag-version --tag next
 
