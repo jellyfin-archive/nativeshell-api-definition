@@ -39,7 +39,7 @@ export interface IAppHost {
      *
      * @returns A string containing the identifier of the layout to use.
      */
-    getDefaultLayout(): Layout;
+    getDefaultLayout(): "mobile" | "desktop" | "tv";
 
     /**
      *  Queries the host application for a profile of media that are natively supported by the app.
@@ -176,17 +176,6 @@ export enum Command {
      * TODO: Add info
      */
     TARGET_BLANK = "targetblank",
-}
-
-/**
- * Available layouts
- *
- * See also: {@link IAppHost.getDefaultLayout}
- */
-export enum Layout {
-    MOBILE = "mobile",
-    DESKTOP = "desktop",
-    TV = "tv",
 }
 
 /**
