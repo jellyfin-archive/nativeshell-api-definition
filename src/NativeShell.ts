@@ -3,12 +3,13 @@
  */
 import { IAppHost } from "./AppHost";
 import { IFileSystem } from "./FileSystem";
+import { PluginBuilder } from "./Plugin";
 
 export interface INativeShell {
     /**
      * Return an array of require.js module names of plugins.
      */
-    getPlugins(): string[];
+    getPlugins(): Array<string | Promise<PluginBuilder>>;
 
     /**
      * Provide a method of opening external urls. Alternative to target="_blank" in browsers.
