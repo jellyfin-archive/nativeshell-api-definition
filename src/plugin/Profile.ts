@@ -1,4 +1,4 @@
-import { MediaType } from "./common";
+import { MediaType } from "../common";
 
 /**
  * Client profile that tells the server what the client supports

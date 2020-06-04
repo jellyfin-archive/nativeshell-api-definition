@@ -1,44 +1,15 @@
-/**
- * @fileOverview
- * Definitions regarding the plugin architecture.
- */
-
+import { MediaType } from "../common";
 import { IProfile } from "./Profile";
-import { MediaType } from "./common";
+import { IPlugin, PluginType } from "./Plugin";
 
 /**
- * The class of the plugin.
+ * Handles playback for an item type and, optionally, specific items.
  */
-export interface IPluginClass {
+export interface IMediaPlayerPlugin extends IPlugin {
     /**
-     * Initializes the plugin.
+     * Has to be the `"mediaplayer"` type.
      */
-    new (): IPlugin;
-}
-
-/**
- * The plugin coordinates various aspects of jellyfin.
- */
-export interface IPlugin {
-    /**
-     * Display name of the plugin.
-     */
-    name: string;
-
-    /**
-     * Type of the plugin.
-     */
-    type: PluginType;
-
-    /**
-     * Unique id of the plugin.
-     */
-    id: string;
-
-    /**
-     * Priority of the plugin. A lower number is a higher priority.
-     */
-    priority: number;
+    type: PluginType.MEDIA_PLAYER;
 
     /**
      * TODO: Document
@@ -166,18 +137,3 @@ export interface IPlugin {
      */
     getDeviceProfile(item: unknown, options: unknown): IProfile;
 }
-
-/**
- * Types available for the plugins.
- */
-export enum PluginType {
-    /**
-     * Alternative media player plugin.
-     */
-    MEDIA_PLAYER = "mediaplayer",
-}
-
-/**
- * Function for loading a plugin.
- */
-export type PluginBuilder = () => IPluginClass | Promise<IPluginClass>;

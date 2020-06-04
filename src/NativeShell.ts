@@ -3,7 +3,7 @@
  */
 import { IAppHost } from "./AppHost";
 import { IFileSystem } from "./FileSystem";
-import { PluginBuilder } from "./Plugin";
+import { PluginBuilder } from "./plugin";
 
 export interface INativeShell {
     /**
