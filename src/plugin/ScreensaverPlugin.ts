@@ -4,5 +4,8 @@
 import { IPlugin, PluginType } from "./Plugin";
 
 export interface IScreensaverPlugin extends IPlugin {
+    /**
+     * Has to be the `"screensaver"`.
+     */
     type: PluginType.SCREENSAVER;
 }

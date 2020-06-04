@@ -7,7 +7,7 @@ import { IPlugin, PluginType } from "./Plugin";
  */
 export interface IMediaPlayerPlugin extends IPlugin {
     /**
-     * Has to be the `"mediaplayer"` type.
+     * Has to be the `"mediaplayer"`.
      */
     type: PluginType.MEDIA_PLAYER;
 
