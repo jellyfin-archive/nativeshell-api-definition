@@ -66,7 +66,7 @@ export interface INativeShell {
 /**
  * Information to start a download to the local file system
  *
- * See also: {@link INativeShell.downloadFile}
+ * See also: [[`INativeShell.downloadFile`]]
  */
 export interface IDownloadInfo {
     /**
@@ -86,7 +86,7 @@ export interface IDownloadInfo {
 /**
  * A description of a Server that was discovered automatically
  *
- * See also: {@link INativeShell.findServers}
+ * See also: [[`INativeShell.findServers`]]
  */
 export interface IDiscoveredServer {
     /**
@@ -110,7 +110,7 @@ export interface IDiscoveredServer {
 /**
  * Info about the currently playing media
  *
- * See also: {@link INativeShell.updateMediaSession}
+ * See also: [[`INativeShell.updateMediaSession`]]
  */
 export interface IMediaInfo {
     action: string;

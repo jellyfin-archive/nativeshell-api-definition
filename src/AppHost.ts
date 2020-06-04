@@ -25,7 +25,7 @@ export interface IAppHost {
     /**
      * Return a boolean value indicating if a command is supported in the app.
      *
-     * _For supported commands check: {@link Command}_
+     * _For supported commands check: [[`Command`]]_
      *
      * @param command command that should be checked
      */
@@ -73,7 +73,7 @@ export interface IAppHost {
 /**
  * Command available
  *
- * See also: {@link IAppHost.supports}
+ * See also: [[`IAppHost.supports`]]
  */
 export enum Command {
     /**
@@ -185,7 +185,7 @@ export enum Command {
 /**
  * Available layouts
  *
- * See also: {@link IAppHost.getDefaultLayout}
+ * See also: [[`IAppHost.getDefaultLayout`]]
  */
 export enum Layout {
     MOBILE = "mobile",
@@ -196,7 +196,7 @@ export enum Layout {
 /**
  * Basic info about the app
  *
- * See also: {@link IAppHost.init}
+ * See also: [[`IAppHost.init`]]
  */
 export interface IAppInfo {
     /**
