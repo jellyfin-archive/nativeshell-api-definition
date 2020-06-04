@@ -120,7 +120,7 @@ export interface ICodecProfile {
  */
 export enum ConditionOperator {
     /**
-     * True if the property matches any of the values (similar to `p in [v1, v2, v3]`)
+     * True if the property matches any of the values (similar to `p `**`in`**` [v1, v2, v3]`)
      */
     EQUALS_ANY = "EqualsAny",
 
