@@ -46,14 +46,17 @@ export enum PluginType {
      * Specifies that the plugin is a [[`IMediaPlayerPlugin`]].
      */
     MEDIA_PLAYER = "mediaplayer",
+
     /**
      * Specifies that the plugin is a [[`IPrePlayInterceptPlugin`]].
      */
     PRE_PLAY_INTERCEPT = "preplayintercept",
+
     /**
      * Specifies that the plugin is a [[`IScreensaverPlugin`]].
      */
     SCREENSAVER = "screensaver",
+
     /**
      * Specifies that the plugin is a [[`ISkinPlugin`]].
      */

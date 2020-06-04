@@ -198,6 +198,7 @@ export enum ProfileProtocol {
      * TODO: Document
      */
     HLS = "hls",
+
     /**
      * TODO: Document
      */

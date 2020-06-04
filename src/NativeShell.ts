@@ -73,10 +73,12 @@ export interface IDownloadInfo {
      * The url to download the file from
      */
     url: string;
+
     /**
      * The title of the file to display to the user (e.g. a Movie title; might no be supported/used on any platform)
      */
     title: string;
+
     /**
      * The (preferred) filename to save the file as (might no be supported/used on any platform)
      */
@@ -93,14 +95,17 @@ export interface IDiscoveredServer {
      * Id of the server
      */
     Id: string;
+
     /**
      * Example: `"http://127.0.0.1:8096"`
      */
     Address: "http://127.0.0.1:8096";
+
     /**
      * Example: `"http://example.com:8096"`
      */
     EndpointAddress: string; // This seems to only be used for servers that are not local? Maybe a remnant from Emby Connect?
+
     /**
      * Display name of the server
      */
@@ -113,21 +118,58 @@ export interface IDiscoveredServer {
  * See also: [[`INativeShell.updateMediaSession`]]
  */
 export interface IMediaInfo {
+    /**
+     * TODO: Add documentation
+     */
     action: string;
+
+    /**
+     * TODO: Add documentation
+     */
     isLocalPlayer: boolean;
+
+    /**
+     * TODO: Add documentation
+     */
     itemId: string;
+
+    /**
+     * TODO: Add documentation
+     */
     title: string;
+
+    /**
+     * TODO: Add documentation
+     */
     artist: string;
+
+    /**
+     * TODO: Add documentation
+     */
     album: string;
+
     /**
      * Float
      */
     duration: number;
+
     /**
      * Float
      */
     position: number;
+
+    /**
+     * TODO: Add documentation
+     */
     imageUrl: string;
+
+    /**
+     * TODO: Add documentation
+     */
     canSeek: boolean;
+
+    /**
+     * TODO: Add documentation
+     */
     isPaused: boolean;
 }

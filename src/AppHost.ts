@@ -80,102 +80,127 @@ export enum Command {
      * TODO: Add info
      */
     CAST_MENU_HASH_CHANGE = "castmenuhashchange",
+
     /**
      * TODO: Add info
      */
     CHROMECAST = "chromecast",
+
     /**
      * TODO: Add info
      */
     DISPLAY_LANGUAGE = "displaylanguage",
+
     /**
      * TODO: Add info
      */
     DISPLAY_MODE = "displaymode",
+
     /**
      * TODO: Add info
      */
     EXIT = "exit",
+
     /**
      * TODO: Add info
      */
     EXTERNAL_LINKS = "externallinks",
+
     /**
      * TODO: Add info
      */
     EXTERNAL_PLAYER_INTENT = "externalplayerintent",
+
     /**
      * TODO: Add info
      */
     FILE_DOWNLOAD = "filedownload",
+
     /**
      * TODO: Add info
      */
     FILE_INPUT = "fileinput",
+
     /**
      * TODO: Add info
      */
     FULLSCREEN_CHANGE = "fullscreenchange",
+
     /**
      * TODO: Add info
      */
     HTML_VIDEO_AUTOPLAY = "htmlvideoautoplay",
+
     /**
      * TODO: Add info
      */
     IMAGE_ANALYSIS = "imageanalysis",
+
     /**
      * TODO: Add info
      */
     MULTI_SERVER = "multiserver",
+
     /**
      * TODO: Add info
      */
     PHYSICAL_VOLUME_CONTROL = "physicalvolumecontrol",
+
     /**
      * TODO: Add info
      */
     REMOTE_AUDIO = "remoteaudio",
+
     /**
      * TODO: Add info
      */
     REMOTE_CONTROL = "remotecontrol",
+
     /**
      * TODO: Add info
      */
     REMOTE_VIDEO = "remotevideo",
+
     /**
      * TODO: Add info
      */
     RUN_AT_STARTUP = "runatstartup",
+
     /**
      * TODO: Add info
      */
     SCREENSAVER = "screensaver",
+
     /**
      * TODO: Add info
      */
     SHARING = "sharing",
+
     /**
      * TODO: Add info
      */
     SKINS = "skins",
+
     /**
      * TODO: Add info
      */
     SOUNDEFFECTS = "soundeffects",
+
     /**
      * TODO: Add info
      */
     SUBTITLE_APPEARANCE_SETTINGS = "subtitleappearancesettings",
+
     /**
      * TODO: Add info
      */
     SUBTITLE_BURN_SETTINGS = "subtitleburnsettings",
+
     /**
      * TODO: Add info
      */
     SYNC = "sync",
+
     /**
      * TODO: Add info
      */
@@ -188,8 +213,19 @@ export enum Command {
  * See also: [[`IAppHost.getDefaultLayout`]]
  */
 export enum Layout {
+    /**
+     * Layout optimized for mobile
+     */
     MOBILE = "mobile",
+
+    /**
+     * Layout optimized for desktops
+     */
     DESKTOP = "desktop",
+
+    /**
+     * Layout optimized for TVs
+     */
     TV = "tv",
 }
 
@@ -203,18 +239,21 @@ export interface IAppInfo {
      * A unique and persistent device identifier
      */
     deviceId: string;
+
     /**
      * A display name from the device
      *
      * _Example: My Phone_
      */
     deviceName: string;
+
     /**
      * The display name for the app
      *
      * _Example: Jellyfin for Platform X_
      */
     appName: string;
+
     /**
      * The version of the App
      *
