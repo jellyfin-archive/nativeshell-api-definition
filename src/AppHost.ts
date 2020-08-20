@@ -46,7 +46,7 @@ export interface IAppHost {
     /**
      * A unique and persistent device identifier
      */
-    deviceID(): string;
+    deviceId(): string;
 
     /**
      * A display name from the device
