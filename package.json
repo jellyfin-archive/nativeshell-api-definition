@@ -2,11 +2,11 @@
   "name": "@cromefire_/nativeshell-api-definition",
   "version": "1.0.0",
   "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "module": "esm/index.js",
+  "types": "esm/index.d.ts",
   "license": "Apache-2.0",
   "scripts": {
-    "build": "tsc -b tsconfig.json",
+    "build": "tsc -b tsconfig.json tsconfig.commonjs.json",
     "lint": "eslint src/**",
     "docs": "typedoc"
   },
