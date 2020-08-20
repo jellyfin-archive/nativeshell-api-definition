@@ -41,7 +41,7 @@ export interface IAppHost {
      *
      * _Called once startup_
      */
-    init(): IAppInfo;
+    init(): IAppInfo | Promise<IAppInfo>;
 
     /**
      * A unique and persistent device identifier
