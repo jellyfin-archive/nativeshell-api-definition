@@ -39,7 +39,7 @@ export interface IAppHost {
     /**
      * Returns basic info about the app
      *
-     * _Called once startup_
+     * _Called once on startup_
      */
     init(): IAppInfo | Promise<IAppInfo>;
 
