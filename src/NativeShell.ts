@@ -3,12 +3,13 @@
  */
 import { IAppHost } from "./AppHost";
 import { IFileSystem } from "./FileSystem";
+import { PluginBuilder } from "./plugin";
 
 export interface INativeShell {
     /**
      * Return an array of require.js module names of plugins.
      */
-    getPlugins(): string[];
+    getPlugins(): Array<string | Promise<PluginBuilder>>;
 
     /**
      * Provide a method of opening external urls. Alternative to target="_blank" in browsers.
@@ -65,17 +66,19 @@ export interface INativeShell {
 /**
  * Information to start a download to the local file system
  *
- * See also: {@link INativeShell.downloadFile}
+ * See also: [[`INativeShell.downloadFile`]]
  */
 export interface IDownloadInfo {
     /**
      * The url to download the file from
      */
     url: string;
+
     /**
      * The title of the file to display to the user (e.g. a Movie title; might no be supported/used on any platform)
      */
     title: string;
+
     /**
      * The (preferred) filename to save the file as (might no be supported/used on any platform)
      */
@@ -85,21 +88,24 @@ export interface IDownloadInfo {
 /**
  * A description of a Server that was discovered automatically
  *
- * See also: {@link INativeShell.findServers}
+ * See also: [[`INativeShell.findServers`]]
  */
 export interface IDiscoveredServer {
     /**
      * Id of the server
      */
     Id: string;
+
     /**
      * Example: `"http://127.0.0.1:8096"`
      */
     Address: "http://127.0.0.1:8096";
+
     /**
      * Example: `"http://example.com:8096"`
      */
     EndpointAddress: string; // This seems to only be used for servers that are not local? Maybe a remnant from Emby Connect?
+
     /**
      * Display name of the server
      */
@@ -109,24 +115,61 @@ export interface IDiscoveredServer {
 /**
  * Info about the currently playing media
  *
- * See also: {@link INativeShell.updateMediaSession}
+ * See also: [[`INativeShell.updateMediaSession`]]
  */
 export interface IMediaInfo {
+    /**
+     * TODO: Add documentation
+     */
     action: string;
+
+    /**
+     * TODO: Add documentation
+     */
     isLocalPlayer: boolean;
+
+    /**
+     * TODO: Add documentation
+     */
     itemId: string;
+
+    /**
+     * TODO: Add documentation
+     */
     title: string;
+
+    /**
+     * TODO: Add documentation
+     */
     artist: string;
+
+    /**
+     * TODO: Add documentation
+     */
     album: string;
+
     /**
      * Float
      */
     duration: number;
+
     /**
      * Float
      */
     position: number;
+
+    /**
+     * TODO: Add documentation
+     */
     imageUrl: string;
+
+    /**
+     * TODO: Add documentation
+     */
     canSeek: boolean;
+
+    /**
+     * TODO: Add documentation
+     */
     isPaused: boolean;
 }

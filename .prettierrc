@@ -1,4 +1,12 @@
 {
   "tabWidth": 4,
-  "singleQuote": false
+  "singleQuote": false,
+  "overrides": [
+    {
+      "files": [".prettierrc", "**/*.{json,yaml}"],
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
 }
