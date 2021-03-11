@@ -191,4 +191,5 @@ Temporary Items
 
 ### Project
 public
-dist
+/dist
+/esm
